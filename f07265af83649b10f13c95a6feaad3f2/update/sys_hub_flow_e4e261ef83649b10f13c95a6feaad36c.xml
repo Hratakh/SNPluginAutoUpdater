@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <authored_on_release_version>30000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Calls the CICD API. CICD credentials have to be valid for the target instance.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>update_all_servicenow_applications</internal_name>
+        <label_cache>[{"name":"ae2caa8a-e051-4a64-966c-e473bebb0e06.http_status","label":"9➛HTTP Status","reference":null,"reference_display":"HTTP Status","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"87747bb3-3e9b-44e4-b858-8809483dc7cd"}},{"name":"200d56e5-df91-497f-93c6-a70cc53f5dc7.Count","label":"1➛Count","reference":null,"reference_display":"Count","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"200d56e5-df91-497f-93c6-a70cc53f5dc7.Records","label":"1➛Store Application Records","reference":"sys_store_app","reference_display":"Store Application Records","type":"records","base_type":"records","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"e0f51a2d-1fe6-4702-a913-cc9113012f62.item.name","label":"5➛Store Application Record➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_store_app","column_name":"name","choices":null,"usedInstances":{"ac962530-a092-41c4-bdd3-a1383fdf5089":["payload-0"]},"attributes":{"":""}},{"name":"flow_variable.batch_counter","label":"Flow Variables➛Batch counter","reference":"","reference_display":"","type":"integer","base_type":"integer","parent_table_name":null,"column_name":null,"choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"ac962530-a092-41c4-bdd3-a1383fdf5089":["batch_counter-1"],"02641667-738d-4301-a24c-5864d974ec96":["condition"]},"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":"","uiUniqueId":"c0edb9c9-9078-4bb8-ae3d-58272fcd5d61"}},{"name":"e0f51a2d-1fe6-4702-a913-cc9113012f62.item.latest_version","label":"5➛Store Application Record➛Latest version","reference":"","reference_display":"Latest version","type":"version","base_type":"version","parent_table_name":"sys_store_app","column_name":"latest_version","choices":null,"usedInstances":{"ac962530-a092-41c4-bdd3-a1383fdf5089":["payload-0"]},"attributes":{"":""}},{"name":"undefined","label":null,"reference":null,"reference_display":null,"type":null,"base_type":null,"parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"":""}},{"name":"flow_variable.payload","label":"Flow Variables➛Payload","reference":null,"reference_display":null,"type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"ae2caa8a-e051-4a64-966c-e473bebb0e06":["batch_plan"],"ac962530-a092-41c4-bdd3-a1383fdf5089":["payload-0"],"358f662c-a4cd-4558-9e31-fe39d08875b5":["payload-0"],"ba989bd5-aaee-47cc-804a-79f8a1bab601":["payload-0"]},"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":"","uiUniqueId":"9de3a935-3a71-4d03-ac6c-b100665ff6bc"}},{"name":"e0f51a2d-1fe6-4702-a913-cc9113012f62.item","label":"5➛Store Application Record","reference":"sys_store_app","reference_display":"Store Application Record","type":"reference","base_type":"reference","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"pills_draggable_outside_block":"false","pills_draggable_inside_block":"true"}},{"name":"trigger.run_start_date_time","label":"Trigger - Run Daily ➛Run Start Date/Time","reference":null,"reference_display":null,"type":"glide_date_time","base_type":"glide_date_time","parent_table_name":null,"column_name":null,"choices":[{"label":null,"value":null,"order":0.0}],"usedInstances":{"05b90a99-0ebf-4a36-8367-3e291d6b5a65":["payload-0"]},"attributes":{"test_input_hidden":"true"}},{"name":"e0f51a2d-1fe6-4702-a913-cc9113012f62.item.sys_id","label":"5➛Store Application Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sys_store_app","column_name":"sys_id","choices":null,"usedInstances":{"ac962530-a092-41c4-bdd3-a1383fdf5089":["payload-0"]},"attributes":{"":""}},{"name":"ae2caa8a-e051-4a64-966c-e473bebb0e06.progress_id","label":"9➛Progress ID","reference":null,"reference_display":"Progress ID","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"93f6a70e-6c6b-4246-8d9a-b5bb1b1dee5d"}},{"name":"ae2caa8a-e051-4a64-966c-e473bebb0e06.results_id","label":"9➛Results ID","reference":null,"reference_display":"Results ID","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"1a379e2c-cca9-462a-8e5c-be81f54ae2c2"}},{"name":"13e2a042-404f-42ad-ac93-72352b67397e.percent_complete","label":"13➛Percent Complete","reference":null,"reference_display":"Percent Complete","type":"string","base_type":"string","parent_table_name":null,"column_name":null,"choices":null,"usedInstances":{},"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"83b61b07-965f-472e-a17c-8ca96df80df0"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Update all ServiceNow Applications</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:05:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e4e261ef83649b10f13c95a6feaad36c</sys_id>
+        <sys_mod_count>60</sys_mod_count>
+        <sys_name>Update all ServiceNow Applications</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Plugin Auto-Updater" source="f07265af83649b10f13c95a6feaad3f2">f07265af83649b10f13c95a6feaad3f2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_update_name>sys_hub_flow_e4e261ef83649b10f13c95a6feaad36c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:25:50</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>c235f52f83689b10f13c95a6feaad3d7</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT INe4e261ef83649b10f13c95a6feaad371"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e4e261ef83649b10f13c95a6feaad36c</id>
+        <name>Update all ServiceNow Applications</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:05:36</sys_created_on>
+        <sys_id>e4e261ef83649b10f13c95a6feaad371</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:05:36</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=e4e261ef83649b10f13c95a6feaad371"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT INd0f2edef83649b10f13c95a6feaad364"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <name>Daily</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:05:52</sys_created_on>
+        <sys_id>d0f2edef83649b10f13c95a6feaad364</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:05:52</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/31SXU/cMBD8K5Wf0yi5g37kDYGQKkGReideEIo28ebOqr9qOwfpif/edZwEjlaN/OLZ3dmZcR6OTEKDklVsKxSyjAkd0GmQ28EioTspONYh1RRoDsG4gVXB9Zixzhm1RWUlBGruQHoCjePoWFUWRcYOIHvcDP4bJy5i0KAi68Q3Vulafv1cfCxKOh/KVVUUdKjKhSfi4f6/Te1eSO5Qs+rhMWMWHC0Icf1xcXIj9M+0/bRZRE1r4GfI26Jdr+gritWXs7L5tG7KFV8D4jlNvQvo1EL4R0wRuzkdepsJPgfUHPkS2F+xOgR+p+WwdOzJS7Kg4NmL3zhROeyQ/LSYisu1nrJLcHcFATZE3Ybe4RyFES36lATHDnoZLt9iqeHOBmF0GgnQyHnayF7p7ykJthDMT0VI70kE2mg0Sp98dJu9efoxq7wWekxlKkrTglxuEIITTR+iniNDiYqIagXWCr2rrTMHMQ6TFpWP8eedNE+01IudzqGNwnPKFfJrwq9G+B6ciC5uiYaGXzLmB38pwftXLxRi/auPSpKzyUOdYogjrRM2XNCCw/zTvzz+Aby9khJJAwAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT IN1019ed6f83a49b10f13c95a6feaad3fc,2ac8256f83a49b10f13c95a6feaad39c,6b682da383a49b10f13c95a6feaad3c9,a6d321e383a49b10f13c95a6feaad343,dbe7a1eb83a49b10f13c95a6feaad3aa"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Identify Skipped Records (just querying, no action taken in this version - for you to extend if needed)</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <order>17</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:32:38</sys_created_on>
+        <sys_id>1019ed6f83a49b10f13c95a6feaad3fc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>e133656c-fbce-4c60-8407-ad00aa509cf3</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VXXW/aMBT9KyjPgEwJacvbBKo0qR9S2/Wl66ybxAGrJslsB0oR/33XcRIYpBQmpDHtqc31te/xuefY5nnh8NDpOyRyCYFO7+KckG6XEM/rBtDx/a4X+MTvXTpNJ4YJw0yVSE31PGUYmoLIqhioAEMhV6mA+VMxAg2dNN4xHoy5CCWLnf7zS9NJQeJqmkmnv9gY2heOAJ8JTH3A2o1Hi6cGYv6njzUSHpTf18XUQRlMZGigdJsOe9MsDhliiEAo1nQmEIegEzmvIpJBeBeLVWDMY42rOSb5TfF3rNc9M3kRw10FzI5Vn7SgyIajIWh40DILdCaLVAtWIR+LapsVkTWcF/DJsrnKfzf5sJkfsvUJnSXyHbIIMqEHf1azc2jNM1PTbvAu1TzBrjtd0xfwRbn9RGST+Nb20qkQPtWIzY4MP9BcppBslpqGmg4V7YoexsnsvuzGFY9zXMWgSAIQ1RdoLbmfacPLwolCGnEmQspjwWNTCdtm5MMEm2AFOoE05fGIpjKZ8nxV3MukPRL40Y5EMjNc8FHchsDsvI3CgvYVxod5+AkkNyzc4DI4uWkKjnFqUY+qQPJU0xkPR0yvqpdZYaJnIF7rxgvF0bJR+facZdNRczUQoNSKbJQp/ZkZDiz1BXs0b1Q+JUfxBXcwZQVRRgO5bYPznbbtbVjUNnpNL9vnx8Enxx4QShbujCIb/vwjVMXRYXueZ/x+fFyZgcatHSjlfbQj5IIc5wips/i2BQ9y4La1jNT+HWcdLnzLzSfqd3deWl5npTNsMpVMIaVqTf0dQsi2AzpNGz7MBntgKW1wA2+N+wpMLcLCCShSNspPpnUbfK2ihQfco3nAPV0PlM2qvYHKnh35AjoVN3xmhIvdrzeyklmQxCE3GNd9kKUjCXihjbkyimlrCcErk21ESXn4PcNFw8UC2FkAcAEtRnqdlgue27r0vKDF3POuz3yfMOK1kaERytjMWy5/4H/YVFOOKg06U3atONGo9SlnMxTslv/+MprDbL8H86XtB+vU17WjfDlvxq7rFiifg0e0Pjld8x/9AjwVZ+91z+0Wmeuv9GSXW/s9gJ7Z8BMVyWjbdN9sUmPINHChjuyDHGLpg8cC4wbkQv35Z93jL5+28fgj/+fj7zSvNQTEBSqE2haqJJM5lVMaiEzlAxJiZdc64iX48gvR5zXoUxEAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1019ed6f83a49b10f13c95a6feaad3fc"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Batch Results">64ca16f8c3131010ca199a038a40dda3</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Query the results, just for audit purposes</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <order>16</order>
+        <parent_ui_id>1b526731-46b9-48e7-ad50-3fe8af1c77a2</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:31:24</sys_created_on>
+        <sys_id>2ac8256f83a49b10f13c95a6feaad39c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>e662bf24-2c2d-476f-b02c-8d20089c13a7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2Wb2/bNhDGv4qhVxtgGRIl60/2KnAQwEC3Fs2aN11hHMmTTYyWVIpy6xn+7jtasuIkTZAM7jAMfanjkffcc/yZ/rjzlPQuPMgEhEmRiSiMwiAM6CvPIYgyiAMpIfbGXglrpExhUGJpFegFaAUNrWxAt24pnTLIwyxL0zgI6JAoQ5YlwJIsDJKw4JQqVVNr2N72O5pyIZSQi6au/sTJbD67ohyxUloaLL2Lj5/GXg2GCls03sXuwdJLlWvgqCl1NkgfXfbSn27Kbmu3YrBAKiiwD73pz3p/Eq+MdPLCsYdfLZYSSVcBusGxt4ZSgq3M1ruwpqWAQZBvS70dMlaqtHSe53K/NuovKhqx8UldcmnbDLKG+KK30vVVlSUKq6py9EcbBCwZPewU3dbiCizckAxhW4NdTbGqlKDVg58SC2i1nZ3GuoS3tTu922KB64eqRKXbdflbZ6Y3nHQcM0XahhRj7dxx/fbNFzer6stg5bUqD0b2i7oSoE9SEYxYXSvUbuw0+7EH1hrFW+vE7rxW/f7EgFDjmsou1lDXqlwualNt1KEUKV9Plpo+JoWuvpDERi3LCRzcnNDoYHJN8atD+BaMcs3/SsfQ5nFf8cEtadWHUn1uce5k5hkLEx4KX6Yi9OMUEz+PMfAZL2RRTEORpMzbj52ZMw1Nc2chHbn43DoDOkN76xbdGNwWYVRtL0npBnuX9uMe5zgvUuRBLiLJH0OR8bubb7ChQS0Odh453u0AmQDIwMdgSrIhif08SYSPcRpx5DzAIJl0Wxvau98/RvufHfI69l/Qph6ug6szml99u/We9obuU7l8gPrNMdhzHp2L84x+Je+T/gTg54f332H2OT4HV787nMNQ75EZZtFUoIx9lsjCj0Wa+vRyTX0RYhbyIhSQZ9+BTBTPPlfi7nqqsrHg7kFr9Amcj0l7NTYv0HDEZt6LGH14/+ZJaa+Bh/2A538AzxR4kYuU+7mIwY9jFvsQRvT7nnPIWRAVIRdngae7D13M2XDv5tH3c9lUi8ZdjpbNZIn2namoNbv96fAXKe2cadBsNNpJa1QX/vkXb78fYOXTlKUZPS1FHDECBVk6FfScyyJNUkyDOyKgVosNmsbdlbOy+gIJR1Yv381Ht4OGbwp7Danx86T2kR+o/sdRjXnOQDLmhwVKPw6iwAceMSKX0d8nojVh0RnfuU9/A+vAmH9SDgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2ac8256f83a49b10f13c95a6feaad39c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Execution Tracker Progress">ce5cf2b877433300d4bdaeca781061bc</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <order>14</order>
+        <parent_ui_id>eeca951a-2e1a-4632-9ada-5ff27350bb32</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:29:50</sys_created_on>
+        <sys_id>6b682da383a49b10f13c95a6feaad3c9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>13e2a042-404f-42ad-ac93-72352b67397e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V227bOBD9FUFPW8AydL94nwIHAQx0t0HT5qUuhCE5dIilJZWS0noN//uSknxJaidxkWJ3gT5qOJw5OnPO8NPaFsye2MTNSJRCmiReEASuy0LCACkkqefGHuf2yC5giTqTKmRYNAJkDlJArU/uQbbmKIl8yLxUFwld1/XcIEU/jcGP+yJEpzJRVxJWt8ONusipoCyvq/IvHE9n00udQ++EZAoLe/Lp88iuQOnGDSp7sn509FLkEghKnTrdQbcuBuinf6pZVeZEIUfdkOIQejvUen8QLxUz8PyRjd8aLBhqXBxkjSN7CQWDplQre9KoVgcUAntXyNUu404UzRFsVlsjs3ipLMOKBbQRZVGPbVPyWy3+1thSTfLoAKCmc1Xv8O/i+cC5aVIWBXaVrHnrun5sPW6L5iq/hAZuNF7atMrU7YZSCqpPO+IZcmhlMz2M9QnvKlO9v9IAkdvbpWyXxZ892fauwFYG6/lWGHN7Mj+iirk9mvcy6xKeE9rc3uybXD6UnD7Q1OYMKzMpw/0wCH5zV37djfVKFN1Qh0NZUpAHqQiK3l0JlEaCWocjG5pGCdI2ho+13YoPJ8SCEpe6bb6EqhLFIq9UeS+6Vpql5Xgh9ceYy/KrhliLRTHuRz/WMoLxlY5fduFbUMLw+4cuoy+Pho6PFNuKj4X40uLMwPT8gCLh6GCQESdMwHcyF9Hx/CRgURyHie/Zm5FR0VRCXe/HpUvmX1pDQOcBo52A7T3TcT3QmffTN2WoElVzodHf48DcZrRdNzzkLKNukqRHBpj6e2eKom7AqLhV8mDVfL9Kzl8cz2PYLo7ZAML6+P7tSWjDwqi1DIrFo21xsw0OqyL4oVXxhPNPGP7fMPNrGOwpM+24/OlO2o3ygY1ImkXUJ5GTIcROyCJ0Mg7EYYGPWZYwHmHyrI1eYpleBX3M0PBAb/r7qWzdS4+7sBb1eIHNtSr1rzWr37qtn/TM1KjuJTbjVok+/OZ3e7PZWTTEiHKfmB175F0lbO8DzftCYV3n3R7cOnS9BvQpQAoOupHnhBCHThbH1MEwCQgS4qIbjw8ubzbfu/oHq5y3CV7wq9tNcD00smYnCThnD3i/9sD/dg/wjNKIu6FDM0ycUBvISePMc1I30drECIE+/5ye/3Qyj1AWhuDykPj62UI/iWhMPMaTOEFM97KESuT3qGozu1d9OV8AYeuXi+uZdbvDcBTYOX4Jn/bLEPllmP+kYSAOMkz1m0kI1YZJI+JAwLkTkiBBHusF7LmvaJjP/wA3Li1j3A4AAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6b682da383a49b10f13c95a6feaad3c9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment>Find all Store applications that are waiting for an update (limited to 100 for performance reasons)</comment>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:09:50</sys_created_on>
+        <sys_id>a6d321e383a49b10f13c95a6feaad343</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:25:40</sys_updated_on>
+        <ui_id>200d56e5-df91-497f-93c6-a70cc53f5dc7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VWXW/aMBT9KyjPEQqF0o63iq5StbZIpepL11pO4oA1E2e2A6Wo/33XH0kYpBSmaGLaU5R7bd/jc8+x/bTyaOwNvCDpBQHunJ6fBUG3GwT9fjfCnTDs9qMwCE+/eL6X4hmBkZILhdQyIxCaY5aXMSwjCMVUZgwvH10GtxRvvUE8mlIWC5J6g6dn38uwgNUUEd5gtZHaFw7DIWEwdAy1Ww8WTw1E8xlADU6j4v/GTR0WQS5iDaXre+RVkTQmgCHBTBLfm+E0xoqLZRkRBMejlFWBKU0VrObpwa+SvkG97okelxDYVURsrvxFjiIbTi6xwmMl8kjlwg21YCXwsSq3WRJZw7mDH7z71fg3PR5vjo/J+oTOO/AdkwTnTA3/rGbn0Jonuqbd4ChTlEPXva7uCw5ZsX3O8ll6Z3vplQgfa8RmM5cfaC6XQDbJdEN1h1y7kvGUL+6LblzR1OByScYjzMo/rJSgYa40LysviVFCCYsRTRlNdSVom5YPYWQGFdAMZxlNJygTfE7NqrCXWXvC4KedML7QXNBJ2saR3nkbhIXbVxC/NOFHLKhm4RaWgcm+LjiFqa4ekpGgmUILGk+IqqoXo2KuFpj9qMs7xaGiUWZ73rvvyaUcMixlRTbIFP3MNQeWesceMo0yUwyKC9jBnDiitAaMbaOznbY93bCobfSaXrbPj4NPjj0gFCyMtCJb4fIjVO7osD03I34/Pq50onVnE4W8GztCzoNmjpA6i29b8CAHbltLS+3fcdbhwrfcfKL+3s5Lq9+pdAZNRoJIoFSuqb8TBNsGsMHDPLAHkMIDt/i1dV8iqYXnbAAKJRNzLK174LqMOgP0GjNA73gNAE0JPrx+Or7NNnz7HIsVPnPB+e6nW1DJLOJpTDXGdRPkGQAmCM8xZRrn9xyWifVx8GJuOZ6inNqgqfsCDNJIq0vejR5aN9ffvqZcVfNRwgUcK1JhLRv3KNzw2F+peZiF92CxsPBwncY6aosn8Gbspm6B4l3XoI2D4zVy4zfZsbh0rwtrt8h6YaUnu9zaw34pkQQpgGmybNtQY51qXWQZ0zbRfWlW/wZaof8Hh20DqlO9+a17vZlpG6+34P98vR3n1QSAKAOFINtCyXNhqJyjiOXSJAROpV2rwYvs+Rf44XQ2FBEAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a6d321e383a49b10f13c95a6feaad343"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Batch Install">89f446ebc3031010ca199a038a40dd7b</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:27:38</sys_created_on>
+        <sys_id>dbe7a1eb83a49b10f13c95a6feaad3aa</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>ae2caa8a-e051-4a64-966c-e473bebb0e06</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+2W227bRhCGX0XgVQuIAg/Lk3vlyjDgIo2NuPFNGhDDPUjbrkhmuVSiCHr3zooUJSuxagNyUaC91Ozszj//7MfVh7UjmXPheEwQEvOChl7oe75Hwc8y8MIUiMdYGjhjp4QFx0yqOeOlkaByUBIaXFmCau1SEgWQ+WmaJMTz8JAw5UEaQxCnvhf7osBUJptaweqh39GUOZWU5U1d/ckn05vpFebQuVRM89K5+PBx7NSgsbDh2rlYHy09V7mCgitMnQ7SR5e99KebMqvarmguOBakvA+96c96dxCvNLPygrHDvxheMo66BKiGj50FlAxMpVfOhdEtBjQHdluq1ZAxl6XB8xyb+6WRX7FoGIwP6qJLq2aQNcTz3krbV1WWnBpZlaPfW88L4tFxp9xuFVdg4B5lUNNq3tWk80pSXN36ybiAVpnpYaxLuK3t6d0WA4U6VkUr1S7Kt52ZznDSbswYaRtUzGvrju23b17cz6vPg5XXstwa2S+qioI6SOWg6fxacmXHjrMfO2CMlkVrrNi108rfnhgQV3yBZfMF1LUsZ3mtq6XclkLli8lM4Y+JUNVnlNjIWTmBrZsTHB1MrjF+tQ0/gJa2+V/xGNw87ise3ZJWvi/lp5bfWJlZGvhx4VOXJdR3ScJjNyPcc4NCMCEin8ZJ4GzG1sypgqbZW4hH5p9aa0BnaG9d3o3BbqFa1uYSlS5579JmvMM5OwkF7G++LBsD9jq1Wh2g/C2qLwfz7zXswLzpRYzev3vzpLQeyAZHXs6OaLzfBXsUw3OhmOKH7DGMTzB4fr7+GaxOITS4+ur8DEN9BE8EhchoUrgZJeASEhAX/JC4WVZAFnih8At6Fni6+9DFrA2Pbh7+PpWNtXDc5WjWTGbc3OkKWzOrH7Yf4qRzpuF6qbiZtFp24R9/cjabAdYizfyCJL4nSBggKDxIIoofDSaSOOFFtCcCapkvuW7sXTkrq8+QsGP18u5m9DBo+K6wl5BKTpPaR/5H9V+OKssiluBr5voxFy4RULiFJzI3TYCIKPRTJsJXeOfIyT9/Cd3f0AIMned4Aw7JWa+3Tiz7Zic1rFQFbLP5FqlTqS9j7Rmad6z9bEWP7jrR32ukJ+2PZuBudyF+ub99u6fMP9d7SP7LkPWevjpi/TgfARZHJCN+Bm6UUe6SIEC24iR2IfF8kUYZvonpGQH7+BeLLKCrGQ4AAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=dbe7a1eb83a49b10f13c95a6feaad3aa"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT IN0856e9e783a49b10f13c95a6feaad3ff,2a64a12783a49b10f13c95a6feaad3ca,30486deb83a49b10f13c95a6feaad3e9,3348212f83a49b10f13c95a6feaad305,516761ab83a49b10f13c95a6feaad315,6f1829eb83a49b10f13c95a6feaad34f,825fe5eb83e49b10f13c95a6feaad36b,8c572d6b83a49b10f13c95a6feaad33b,b68425e383a49b10f13c95a6feaad32d,d70665e783a49b10f13c95a6feaad3ca,fc35e56383a49b10f13c95a6feaad3aa"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0056e9e783a49b10f13c95a6feaad3ff</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned>payload,batch_counter</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0f51a2d-1fe6-4702-a913-cc9113012f62</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:20:35</sys_created_on>
+        <sys_id>0856e9e783a49b10f13c95a6feaad3ff</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:59:51</sys_updated_on>
+        <ui_id>ac962530-a092-41c4-bdd3-a1383fdf5089</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y247TMBD9FeTnpsqtadM3WIS0EjfBsi90FU3sSWvhxCF2upSq/844SS+wgFRpgQf6Zh977DMnc9xRt0y3tm6tudFPjZHLis0/3o2YrBxG4y2Tgs0ZG7EKSqRRDRulQRCwBtU6ZLstlL7P1tBIyBWOhx273XZBwQs2X9AW9ItJAKHwggITL576oQdpEHmcp0EQ+UFYJOFYWizHZmMySdELNlowu6mxOwHqWkkOVuqqW3A3ZAJLnQmwbksByiAtNPi5RWNRZGtsTLf9TAKKDjR2Hz4QqTSBZx/lNHMH7EguIU2tYHN7Ue0c1fhKKtHgUJY1NLRmsWHz7Q9LXZkmCY9BhNNZBHGaB34RRDydQFIggIgSpAMV5Kho69tDHT8obCcfAcY2sloO85dD2Ps9qBvhaAQjhl8sVgLFXk1WQkXy6mZzQBoE8aZSR2AlK9vbaoWq7kclfDHyK908833fxRRI2XHsVw/TbCikHi6egwUi1XLbNsNWvtKSo+l1EVhAq+zVKdZveFO7uuhDrKvBIVqrtqxe96KwwwH7uiWkNUQCa5e0y2JIqXi/0vfv9ixfyKrTZ1hUmoM6zMCSinlrHZ8ta+XND4L3yAPJUWFJN2YllTUhWd3otexuIdLleKloMu5cJdA9ZWPgLsMxfQwYvyD8eQffDpZ7RcdQsLvuQyWp/q9dCaUCI0ijiRfBNPBi4Uce8IR7VE1+kkyKIsk5240YGe5KgTFHoegLZZ9bl2Yv2yBQ1mvsQngja/uUSK1x0GI3evDA5mD5KuO6rWzH7uSZFZltoDKFbsr5DDCgoo69BDkSzxn3AMXUS4MwmBJRP49h95N353xPhb/zVByceOqZo/7kSP0XGQ3+Igvg8gDsv/b1AR0cFv4Bh8X/pb+Ogn9vsKPkf8Vh3EeRpzz1Un868+I8n1HlRsKbzMJpWHAxEUnwiA67cxbq+VwamktD869VuzQ0/8+De2loLg3NpaG5NDSP3tAI5NL9Kt04Utf7/2rcwoZKVPJT6F43n1yGR2z3Dc9NT8H1EQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">ee64a12783a49b10f13c95a6feaad3c8</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:12:17</sys_created_on>
+        <sys_id>2a64a12783a49b10f13c95a6feaad3ca</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:59:51</sys_updated_on>
+        <ui_id>181c6126-ea0c-42fb-b773-4de1c18c2b2d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/aMBT9K8jPASWEwOCtoqo0aVulterLVkUX2wFrjp35g5ZF/Pdd5wPQyrai7nFv8bHv9Tkn9yQ10d5V3tl7fWWtWCuy+PIYEaEChs81EYwsyByyIkvijKbjaTqO4/G7SbKapqtkzFLgkymJiIKS40mqFRNOaIXQFqQPWF1jCcumPBuyYp4MJ/NZMZyndDqEWUxplhYZo7PRUnvl9vuvPo5TFmM9E7aSsHt4Yxu6EZIZ3kmrwCBTxw1Z1L9svVaqhBWXeHR5ovWMfLerAmSdEWrdrT90pXc9qA0LVMZxRPiz44pxJFGAtDwiJSgGTpsdWTjjETAc2K2Su8OJjVAOu2GfDZdV+1TCsxU/eOgZx6Gm4KiQ8nb3sMw7d1u4uAYHSMpT5013lG60oNy23jBegJdueYq1B26rRm9T4mAl+2otfak+tbaQQ4P+ZSLiLZLgVdAcVHSSiruNfvrcs7wRqvGn25SagjyswKGLK+8Cn5pwyUtslJdQVehtXhm9FU0xcilHa4mLUSH1E14aJn0ENBAfocUwukH8uoEfwIig4iO2wWKcCptbakTVa2suJ/uI2J1dSrD2qBHNzb/7wLBV3GnLW3tCSdPoCi/e8k7GPuoyVsRQJHOanB88SM8MWd4Ax6C5Dbo2EHagtMPRWA+cHvgKBfKXafrj2csi8wrmLyIzaJPwe02XpCf5S3o65ML4ZNn/9Lw5PYHmCqygefNPCYOHn7J/GJ/HMP7tpQezqbDI7T5g7/s/WdjY4WwJego9afMtqDpi+59jk3c+EwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">38486deb83a49b10f13c95a6feaad3e8</block>
+        <comment>Wait for 5 minutes, and then check if the installation is complete. If not, repeat.</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Do the following until">eaeb040687210300e6c2c88fc0e3ec89</logic_definition>
+        <order>12</order>
+        <outputs_assigned/>
+        <parent_ui_id>1b526731-46b9-48e7-ad50-3fe8af1c77a2</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:29:07</sys_created_on>
+        <sys_id>30486deb83a49b10f13c95a6feaad3e9</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>eeca951a-2e1a-4632-9ada-5ff27350bb32</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0U7bMBT9lcnPbeUmLYG+IRDSpG1IA/GyoejWvmmtObZnOy1d1X/fdZIWNECjGo/LU3zse33OybnKltkmuiaGW3segloYNvt2P2DKJIzet0xJNmOyGOenFZ8UOc/HOecn40xkRV7RcwLFqWADZqBGOimskSoqawhagW4Stt2Oc8yAT7LhhE+q4SQDOQRxlg+LLJ9m85MiPytw5NALNLEUtnYaI+523xvOcznmnJpJFZyGzd179hRLpaXHXrQDTxoiejbb/rH1VhM0zFHT0YsnLrxgTNy4BIXolVn060996c0etF4mKhnnA4YPEY1EYlGBDjhgNRgJ0foNm0XfEOAR5LXRm8OJpTKR2lGjJWrXvdXwENQvbJvyVFMhSRTY7R6WZe91B1eXEIFYNSI2vj8qllYJDJ05EitodLx4inUHrl0ruC2JMNf7aqub2nzpfGGHBvtPS0gTiAS6pDmp6CVVN0u7/rpneaVMa1C/qa0AfVhBJBvnTUx8tgw11ikFNThH5pbO25Vqi4lLPVpoWowqbdd0aRqCEYhEfEQWw+iK8MsWvgOvkorP1IaKKRahDMIrt9fWXs52AxY24UJDCI8aydzyZ5MYdop7bWVnTyppG53TxSvsZewG/fjNJWRi/lrypvyFlJUt8DiDzyfo6Py/gcWz/H/oYv06v2NGYfy3UeiRI2dhOv0/Cv84Cu8X+fsU2a73wVOhAlG4TdjH/Y8pbWwoQ0o8hdbW/0jkH7Hdb6n8mZ/iBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3b48212f83a49b10f13c95a6feaad304</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Wait for a duration of time">fdb2541473031300b61e66476bf6a70e</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id>eeca951a-2e1a-4632-9ada-5ff27350bb32</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:29:18</sys_created_on>
+        <sys_id>3348212f83a49b10f13c95a6feaad305</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:04</sys_updated_on>
+        <ui_id>6f200e8c-e8ec-4d16-b078-28e6c657bf7e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1ZbW+bSBD+K4jPPh8LBsf+ViUXqVJ7PSVWv1QVWpbBXnUNHCxJfFH++83C8mKMGzt1Kket5A/s7LD7zMszM7YfzaSQaSHzRfIuz/kyNudfvo5MHisZPj+aPDTnZsjohFjuZOpYDnEsK/AIeN5k6gWRR6e2Z47MmK4BNSVfQ+ZnIKjkd+CHRYYPSewnKeBTkqHmHRWFUqWRBLUOeZ4KuvncE7MVF2EGGlFKM7xA7cwfe1uHIhQ0AIGqCwXRqCEaNUSjA/FwY+QmVZpslXAGev1BX3RZC5MsVMAR1siEBwlxCIg5oiKHkbmmcagO2zSSDGj4KRatYMVjiefhSSsQafW0pg85/w/vnljqjQjQHwyqvWbpa99W4uiKSnors4LJItOqFfAq1LWD6gj0A6XNsJ5GrW4AUZJBR7kRaG3yhCEKIaKFkJfHX0aOusxWl1UmfUpVqFDHUVGhgagNTkSxjv+uAmw20PrZp8VXw7lZ5OhaSFUgVWTQpRil6HaV3N/Urr/mcQlJh1AkjIpmRaXMeFBI5YtHEwSs8Rx/TdOUx0s/zZI7Xr6MaNfjpcDFOBLJPd6pODqmTNk2xrSh42uUX5XizzTjys6PeIy2oULINn7tsJ1c3lbT2dym5NPIzDf5paB53roM08v/t1DmmJ3XpV+6uyFJeZZ6n2U8le+YulY7QMW0ZC1EZOIysoe1AfSp2EFdW0RmU+sPi+DHsKy55c4ta7emuMZHHpfuPrauHICwzs6rFtw+0Nq/ZUT78g+7x9RZfdZ1Y4jeuyw8ioS7DNMGnR3FeO5X+a1tKy9/AWueI8pkNnXci31peOG2ObfNv5Yn8JAKzrjcYv42S/7SKkZH5Ti2HACzzxZjUeHcA/+Y/krOmidtGxvy8/fCNNR3b/rjS+eMoSI/1E7/gYxhBtLl4Clpsztwjv1MV3+hieQEJtonMtH54VlikHKDc8WQu95EBTx9pSOR7YZ7B/mp8/x0johB7XUCvVvrji5tB+Da9wUD8Rga0OHQt0cFlPudjWZWQPmfi0qu03Zy1kXwpwwLPziOD/f00S88pgcRCT3ikWDqeDbmvjNhHgNvBkAIndlWm9idilrlePlLwitR8gBYA32gxGWUuIao+bwFL2Xm64wn5alvhprn2cV+3hwfBa6LXyj3dBHP7reInK0gLMSJiXMAis6Yjn425AqMKBHoQLXqoNqHVpOkTcxtetx05Joe7qvQw7G32cHWcRfmEFNu2+03yZjoFmjGVtcchAp2GaG3Og1eWI7jWDPmOtOmxIchQBRNA2ID6WdgW71Py5gDcOy2mu+C0wTB3IUlZD16vG+kv3vHL987vqpMru5sfM14jtAWSva+/q9GbWww4Tjriu6T7JsyqpU9/Q+pWZTq9RkAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">596761ab83a49b10f13c95a6feaad314</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>e0f51a2d-1fe6-4702-a913-cc9113012f62</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:25:19</sys_created_on>
+        <sys_id>516761ab83a49b10f13c95a6feaad315</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>02641667-738d-4301-a24c-5864d974ec96</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K8jPbZQ0S0f7NnWahARMYtNeYIpubGe1cOzgj24lyn/nOnE/xIrYBLzxFp/74XNO7k06or1rvbO3+sJa8aDI8vP9hAgVMHzuiGBkSRZQ1EWWFjSfzfNZms7enmXVPK+yGcuBn83JhChoOGZSrZhwQiuENiB9wLoOS1gx58WU1YtserY4r6eLnM6ncJ5SWuR1weh5stJeub7/4tM0511XS/1YbsAIqCRPKnB0XdKQwk3fY3cmbCthe/dPL6FrIZnh0ZYWDKrEGFl2P4VeapOEiktMXR35dMI6t20DZJ0R6iGe38fSmx2oDQtUZumE8CfHFeNIogZp+YQ0oBg4bbZk6YxHwHBg10pu9xlroRx2wz5rLtvxqYEnK77z0DNNQ03NUSHlY3R/LKP3I1xfggMk5anzJqbStRaU29Ebxmvw0q2OsTHhuh30DiUuvIJYraVv1MfRFrJvsHvViHiLJHgbNAcVUVJ9s9aPn3Ysr4Qa/IlBqSnI/Qkculh5F/h0hEveYKOygbZFb8vW6I0YipFLkzxIPCTDrDAetiQBGognaDEkV4hfDvBdHKQP2AaLcSpsaakR7U7bcDnpJ8Ru7UqCtQeNaG75zQeGo+KorRztCSVDowu8eMOjjH4S97NOoc4WNDs9eJCfGLJyAA5L+nyjXj3+L2DxbPzfjFP9a36v2YTsN5sQkVeuQlH834Q/3oRAswIraDn8W7Bd+Cz9xVW4D6M8Xro3mwqL3G4D9m73RwuBLc6WoMfQozZfg6oD1v8APVZ5lhsHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">671829eb83a49b10f13c95a6feaad34f</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:28:28</sys_created_on>
+        <sys_id>6f1829eb83a49b10f13c95a6feaad34f</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>1b526731-46b9-48e7-ad50-3fe8af1c77a2</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNn25AsW018Sx0ECNA2QBPk0gbCilpZRClS5SOJa/jfu9TDDpoUidEcezHE4e5yZsSxtkx713hnb/SZtWKt2PLb3ZgJFTB63jJRsCU7hUW5iKMFT2ZpMoui2ck8ztMkj2dFAjhP2ZgpqJEquVaFcEIrgu5B+oBtt4AzDnACE4wW8WQO6XxymqZ8gvMPSY55HmGUTivnmsw6cN7udt99FCUFHUVzCmEbCZvbdxrHKyELg73UBgwxd2jYcvvH1lulS8hRUunqifYX7HCbJkDWGaHW/fpT33o9gNoUgcosGjN8dKgKJBIlSItjVoMqwGmzYUtnPAEGobhScrOvqIRyNI3mVCib7qmGRyt+YZgZRaGnRFLIsdvdL7Pe5Q4uz8EBkfLcedOX8koLjrbzpsASvHSrp1hXcNW0etsWB7kcurX0tfrS2cL2A4aXSoi3RAKboDmo6CWV15V++DqwvBCq9afflJqD3K/AkYu5d4HPlqHEmgZlNTQNeZs1Rt+Ltpm41NO1pMW0lPqBDg03fwo8EJ+SxTC9IPy8hW/BiKDiM42hZroVNrPciGbQ1h7OdmNmN3YlwdqDRjI3++kDw05xry3r7Akt7aAzOvgeexm7cZ+5MoIyPuXxyxcPkhcuWdYCh+B9BMer0aWiFEg54uHHek7vy5ZePg/Wa+XHBecN/J8FZ9Tl4e/KjslQ/EqGeuTIEC0W/zP0zxkKNHOwgmftl4bGhT+0dwzRXQhBd+jebC4scbsJ2OXwfQsbG7pbgj+FHrT5EVQdsN1vtttBKCkHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">8a5fe5eb83e49b10f13c95a6feaad36a</block>
+        <comment>Add a comma in preparation for the next line...</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned>payload</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id>02641667-738d-4301-a24c-5864d974ec96</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 11:00:03</sys_created_on>
+        <sys_id>825fe5eb83e49b10f13c95a6feaad36b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:19:01</sys_updated_on>
+        <ui_id>ba989bd5-aaee-47cc-804a-79f8a1bab601</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9LzonhjMnbtNb0aJAgW0d1qyXoTAYiU6EyZKqj6Sekf8+KnaSor30sGNu4iMpPj6RUMdMDDYGvzDX3suVZle/n0dM6oTRuWNSsCvGRkxDg3Sy0CoDgoANqJiQrquV2VYbcBKWCrMhYrcbUZCQ3iponz4Ty9dSCYcDBQuOKgZ07Kp759pTKks+BfHl4rKA6Xw5yetJweczKGsEEEWJdKGCJSoK/XHk/KGJ0NoE+OCkXg321yHt8QAaJxKNyYjha0AtkOrXoDyOWANaQDCuPSIOQTxodQLWUodewjUq258aePXyL1W+zPM85dRI3XHsvUezGuTr4foWAhCpyEN0QyhfG8nR97oIrCGqcPMW6wMebJBG9ykhKT9kGxUb/b0XhR0vOLwWIdETCbSp6dTF0FL9uDbbnweWd1Lv9RmcynBQRwsCqbiMIfHpWJSLd4L3yAfJUWFDFasGrCWkss5s5L4KkW6ylSIj28+SwDS2GfDUYUaPAdkd4bd7+GkYtG90DSWncr+0fIl4n0ZoLrCAeTEbF3AxGU9FXoyBl3xM05SX5ayuyyVnNJq+9TcKvD8JRS9UvcTUZi/bIFDVa5xSuJM2XBOpDQ5a7J7TzvR8zqt1Xq3zav3X1RLIpSeei0Tq/vB/JUdLoyn5W2hr3J/U4Qnb/QOFbZ+9CQcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">84572d6b83a49b10f13c95a6feaad33b</block>
+        <comment>End of the JSON payload</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned>payload</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:24:57</sys_created_on>
+        <sys_id>8c572d6b83a49b10f13c95a6feaad33b</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 11:00:03</sys_updated_on>
+        <ui_id>358f662c-a4cd-4558-9e31-fe39d08875b5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9F50Tw5kTt8mtaFGgwLYOa9bLEBiMRCfCZEu15KSe4X8fFSlJ0V562DE38ZEUH59IqGe6daZ1dqlvrJWbmi1+r0ZM1h6jc8+kYAvGRqyGCulkoFMaBAE7UK1H+r5Uel/soJGwVpjEiGFYDRQlpDUKuudPBfOtVKLBSMJAQzUdNmzRv3MdSOU5n4L4cnWdwXS+nqTlJOPzGeQlAogsR7pQwRoVhf44sf7QhuuMB6xrZL2J9teY9nQEdSM8jcmI4avDWiDVL0FZHLEKagFON90JaRDEY63OwFbWLoi4RWXCqYJXK/9S5es0TX1OidQdx+A9mUXUL8DlHTggUi13bRND+VZLjjboIrCEVrnbt1gIeDRO6jqkOC99zNaqrervQRR2uuD4XIS0lkig8U37LmJL5dNW738eWd7L+qBPdCrNQZ0scKTiunWeT89auXwneEA+SI4KK6pYVGAMIYVp9E4eqhDpKtkoMpLDMAn0g5sA9x0m9BiQ3BN+d4Cf46R9o2so2Zf7VcuXFh/8CM0FZjDPZuMMribjqUizMfCcj2ma0jyflWW+5mwYMdvZWwXWnoWiFypeWt9mkC0KVASNfQpvpHE3RGqHUYth5bcm8Lks12W5Lsv1n5dLIJeWeC49qYfjH+YdHY2m5G+hvW7++A7P2PAPGWJ9Og0HAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">be8425e383a49b10f13c95a6feaad32c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id>181c6126-ea0c-42fb-b773-4de1c18c2b2d</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:12:51</sys_created_on>
+        <sys_id>b68425e383a49b10f13c95a6feaad32d</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:59:51</sys_updated_on>
+        <ui_id>10ed2efd-fe2c-4283-82b1-49482429e77b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">970665e783a49b10f13c95a6feaad30f</block>
+        <comment>Add each application to the payload JSON for the CICD API call later</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:19:27</sys_created_on>
+        <sys_id>d70665e783a49b10f13c95a6feaad3ca</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:59:51</sys_updated_on>
+        <ui_id>e0f51a2d-1fe6-4702-a913-cc9113012f62</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/51TwU7jMBD9F5/bKG1ou+kNgZCQYJEK4rJC1dSetNY6ttd2WrJR/n3HdRoQJ7SnZJ5n3rz34nTMNME2wb+Ya+/lXrP1r7cJkzpi9N4xKdiazUpRlbO85MV8WczzfP7jarZbFrvZXBSAYskmTEON1CkD1p7KI6gm1l1H7WKxxMU0UkyvylU1LQu+nMIq53xRVAvBV9kGuXHC9z2NCumtgvb1/xn4QSrhcDBjwZG2gI6tuy9H3zWnYIeKWu8Hd1/MhtbG0iUJA/AwzGxGlB5RxDyfMHwPqAXS+gqUxwmrQQsIxrVsHVxDgEMQT1q1Y8dB6kB0xHNAZdNbDe9e/qXdszyPIxWSNY7pcCy3Q6IJrm4hwDMt4aFxQys/GMnRp1AEVtCocPMZSw1PNkij00iAnbpMG9XU+mfKhI0Elw9ISONJBNpoOZoYHFXPB3PaXFTeSX2OZzhUhoMaKwjByV0Top6OocKaiLY1WCv1fmudOcrzMGmps72iIquUOdHSeKkz4FF4RglDdkf47Rl+BSeji0eioeF+wnzrbxR4/+GFQtz+aaKS5GzwsE0xxBHupA3XtOCIg9z+Ld7/xD1myqUnCS8Ru7/8XfGgpbsk+WfoZNzvKP4D6/8BMejwe6cDAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f435e56383a49b10f13c95a6feaad3aa</block>
+        <comment>Initiate payload and counter variable</comment>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</flow>
+        <flow_variables_assigned>payload,batch_counter</flow_variables_assigned>
+        <generation_source/>
+        <logic_definition display_value="Set Flow Variables">4f787d1e0f9b0010ecf0cc52ff767ea0</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:15:44</sys_created_on>
+        <sys_id>fc35e56383a49b10f13c95a6feaad3aa</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:59:51</sys_updated_on>
+        <ui_id>05b90a99-0ebf-4a36-8367-3e291d6b5a65</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1XXW/aMBT9K8jPgAKB8PHWtaqEtK3T2vWlVNHFvgGrTuzaTjuG+O+7TgJ0RZs0aZ0mjTf72Nc+91yfXGXDdOlN6d2NPnNOLgs2vbtvM1kEjMYbJgWbMtZmBeRIIwNrpUEQ8ASqDMhmXq3N2XTOzoxRkoOXumiVRoDH1gI8X7U2G2/lcom2a8sidR6sT8Ny6mWO2+2ctekU7dFVx8wK2qGULJYteAKpYKGwZcJB6FqZ1XnLr7B17bXFKtIAf4BlFXxHzIR0RsH69p8lyFdSCYuN2AYs0fNo2XTzaqkSP0n4AER/NI5hMFn0oqwX88kQkgwBRJwgHUgEUNHWT/vqHJXLr00AHKVZLJv5+ybsegdqKwKNXpvhV4+FQLo/A+WwzXIoSA9t13vEIoirQh2AlSx8/VhWqEw9yuGrk9/o5nEURSEmQ8qOY726n6ZNzWo4uwAPRKrkvrTNVr7SkqOrdRGYQan8+Uus3nBlQm3rEB/K0kRrVebFx1oUtj9g90QIKR2RQBOSDlk0KWXXK/38ecfyUhaVPs2i0hzUfgaeVFyUPvDZsFLevBK8Ro4kR4U53ZjmYAwhqbH6SVa3EOm8u1Q06WZKPxO7YNAu8JBhl4oB3UvCLyr4FqwM6X6gYyg4XPelkI8lzsITmgiMYRIPOzGMep2BiOIO8IR36DVFSTLMsmTB2bbN3NqdK3DuIBRVKH0sQ5q1bI1Aaa1xCOFWGn9GpJ6w0WLbPvpsVCZLuS4LX7HbfTyiY7tGv2+Q/q8MMui9MMi7yuwHHj+h15iF3jMu98CudLM92til/wZ2GfyXZjkI/qNbDpL/FbvwCMViwiedSTQadwaLxbgDGIvOcNwf9TMuhiLp/UG73Ac/1HxOPffUc08999RzTz331HNPPfdte65ALh3xvAmkZrs/3rCwpicq+UvoWduHkOEB234HhCtATzsPAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT IN0547e96b83a49b10f13c95a6feaad3c9,4547e96b83a49b10f13c95a6feaad3ca"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e4e261ef83649b10f13c95a6feaad36c</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{flow_variable.batch_counter}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:24:45</sys_created_on>
+        <sys_id>0547e96b83a49b10f13c95a6feaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:24:45</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>8ae1aad4-6ece-4d8c-aed7-912176650b4a</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e4e261ef83649b10f13c95a6feaad36c</attached_to>
+        <extra_info/>
+        <order>1</order>
+        <prescription/>
+        <source_ui_id>8ae1aad4-6ece-4d8c-aed7-912176650b4a</source_ui_id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:24:45</sys_created_on>
+        <sys_id>4547e96b83a49b10f13c95a6feaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:24:45</sys_updated_on>
+        <transform_compositions>[{"id":"06190ffa23a220103a3339e1d7bf65f9","transformType":null,"transformDefinition":null,"order":0,"parameters":[{"id":null,"name":"number","label":"Number","order":0,"attributes":{"":""},"value":"1","type":"int","defaultValue":"","typeLabel":null,"mandatory":true,"choices":[]}]}]</transform_compositions>
+        <transform_definition_id display_value="add">50980bfa23a220103a3339e1d7bf6510</transform_definition_id>
+        <ui_id>2f5b05f1-270f-4794-86b4-55477366f6ff</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e4e261ef83649b10f13c95a6feaad36c^sys_idNOT IN62c4ad2783a49b10f13c95a6feaad341,66c4ad2783a49b10f13c95a6feaad36e"/>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=integer,uiTypeLabel=Integer,uiUniqueId=c0edb9c9-9078-4bb8-ae3d-58272fcd5d61</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>batch_counter</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Integer">integer</internal_type>
+        <label>Batch counter</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</model>
+        <model_id>e4e261ef83649b10f13c95a6feaad36c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_e4e261ef83649b10f13c95a6feaad36c</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:13:56</sys_created_on>
+        <sys_id>62c4ad2783a49b10f13c95a6feaad341</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:35:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_hub_flow_variable action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=9de3a935-3a71-4d03-ac6c-b100665ff6bc</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>payload</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Payload</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Update all ServiceNow Applications">e4e261ef83649b10f13c95a6feaad36c</model>
+        <model_id>e4e261ef83649b10f13c95a6feaad36c</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_variable_e4e261ef83649b10f13c95a6feaad36c</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_variable</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:13:56</sys_created_on>
+        <sys_id>66c4ad2783a49b10f13c95a6feaad36e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:35:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_variable>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>batch_counter</element>
+        <help/>
+        <hint/>
+        <label>Batch counter</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_variable_e4e261ef83649b10f13c95a6feaad36c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:13:56</sys_created_on>
+        <sys_id>2ac4ad2783a49b10f13c95a6feaad36a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Plugin Auto-Updater" source="f07265af83649b10f13c95a6feaad3f2">f07265af83649b10f13c95a6feaad3f2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:13:56</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>payload</element>
+        <help/>
+        <hint/>
+        <label>Payload</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_variable_e4e261ef83649b10f13c95a6feaad36c</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-11-20 10:13:56</sys_created_on>
+        <sys_id>a2c4ad2783a49b10f13c95a6feaad372</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Plugin Auto-Updater" source="f07265af83649b10f13c95a6feaad3f2">f07265af83649b10f13c95a6feaad3f2</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Plugin Auto-Updater">f07265af83649b10f13c95a6feaad3f2</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-11-20 10:13:56</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_variable_e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=e4e261ef83649b10f13c95a6feaad36c"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=e4e261ef83649b10f13c95a6feaad36c"/>
+</record_update>
