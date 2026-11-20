@@ -8,6 +8,6 @@ License
 
 Copyright (C) 2026 Stefan Reichelt.
 
-This project is licensed under the GNU Lesser General Public License v2.1. See LICENSE for the license terms.
+This project is licensed under the GNU Lesser General Public License v2.1. See [LICENSE](https://github.com/Hratakh/SNPluginAutoUpdater/blob/main/LICENSE) for the license terms.
 
 It is independent and not affiliated with, endorsed by, or sponsored by ServiceNow, Inc. ServiceNow is a registered trademark of ServiceNow, Inc.
